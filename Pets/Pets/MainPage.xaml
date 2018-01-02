@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Pets"
+             x:Class="Pets.MainPage">
+    
+    <ContentPage.Title>
+        MY PETS
+    </ContentPage.Title>
+    
+    <ContentPage.Content>
+    
+        <StackLayout>
+            
+            <ListView x:Name="petsListView"
+                      Margin="20, 0"
+                      HorizontalOptions="FillAndExpand"
+                      ItemSelected="petsListView_ItemSelected">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ImageCell ImageSource="{Binding Image}" Text="{Binding Name}"/>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    
+    </ContentPage.Content>
+
+</ContentPage>

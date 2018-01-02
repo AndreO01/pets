@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pets.PetDetailPage">
+    <ContentPage.Title>
+        EDIT PET PROFILE
+    </ContentPage.Title>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_location_on_white.png"
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout x:Name="detailsStackLayout" Margin="10">
+
+            <Grid Margin="0,30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image x:Name="petImage"
+                       Aspect="AspectFit"
+                       HorizontalOptions="FillAndExpand"
+                       HeightRequest="45"
+                       Margin="10"
+                       Source="{Binding Image}"/>
+
+                <Button x:Name="editPetImageButton"
+                        Grid.Column="1"
+                        Text="CHANGE PROFILE PICTURE"
+                        Margin="0,10,10,10"
+                        HorizontalOptions="Fill"
+                        Clicked="EditPetImageButton_Clicked"/>
+            </Grid>
+
+            <Entry x:Name="nameEntry"
+                   Placeholder="Name"
+                   Text="{Binding Name}"/>
+
+            <Entry x:Name="breedEntry"
+                   Placeholder="Weight"
+                   Text="{Binding Breed}"/>            
+            
+            <Entry x:Name="weightEntry"
+                   Placeholder="Weight"
+                   Text="{Binding Weight}"/>
+
+            <Entry x:Name="descriptionEntry"
+                   Placeholder="Bio" 
+                   HeightRequest="40"
+                   Text="{Binding Description}"/>
+            
+            <Button x:Name="saveButton"
+                    Grid.Column="1"
+                    Text="SAVE"
+                    Margin="0,10,10,10"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="DodgerBlue"
+                    TextColor="White"
+                    Clicked="SaveButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
